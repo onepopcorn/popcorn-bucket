@@ -11,3 +11,14 @@ void setVideoMode(uint8_t mode) {
     regs.h.al = mode;
     int86(0x10, &regs, &regs);
 }
+
+/**
+ * Wait for vertical sync to start (CRT trace finishes)
+ *
+ */
+void waitVSync() {
+    // wait until retrace starts
+    while ((inp(VGA_STATUS_REG) & VSYNC_BITMASK) == 0);
+    // wait until retrace ends
+    while ((inp(VGA_STATUS_REG) & VSYNC_BITMASK) != 0);
+}
