@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
     setVideoMode(MODE_13h);
 
     // wait for vsync before writting to VRAM
+    waitVSync();
     uint8_t* screen_buffer = (uint8_t*)(VIDEO_MEM_START + __djgpp_conventional_base);
 
     uint8_t x = 40, y = 40;
