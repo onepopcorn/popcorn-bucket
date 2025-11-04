@@ -26,7 +26,7 @@ int main(void) {
 	// Go mode 0x13!
 	VGA_SetModeX();
 
-	// Draw some scrap
+	// Draw some crap
 	__djgpp_nearptr_enable();
 	unsigned char *vram = (unsigned char *) (__djgpp_conventional_base + 0xa0000);
 	for (int i = 0; i < 200; i++) {
