@@ -6,6 +6,7 @@ OUT_DIR := ./out
 # Examples list. Exe filenames must be DOS friendly (8 characters long max)
 MAP_basic-hello-dos := hello.exe
 MAP_basic-gfx-mode-13h := gfx-13h.exe
+MAP_adv-gfx-mode-x-hw-scroll := hw-scro.exe
 
 
 # Default target (just for help)
