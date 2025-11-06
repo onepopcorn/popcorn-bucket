@@ -1,3 +1,7 @@
+#include <stdint.h>
+#include <dpmi.h>
+#include <pc.h>
+
 #include "video.h"
 
 /**
@@ -6,10 +10,10 @@
  * @param mode Video mode to set
  */
 void setVideoMode(uint8_t mode) {
-    union REGS regs;
-    regs.h.ah = 0x00;
+    __dpmi_regs regs = {0};
+    regs.h.al = 0x00;
     regs.h.al = mode;
-    int86(0x10, &regs, &regs);
+    __dpmi_int(0x10, &regs);
 }
 
 /**
@@ -17,8 +21,8 @@ void setVideoMode(uint8_t mode) {
  *
  */
 void waitVSync() {
-    // wait until retrace starts
-    while ((inp(VGA_STATUS_REG) & VSYNC_BITMASK) == 0);
-    // wait until retrace ends
-    while ((inp(VGA_STATUS_REG) & VSYNC_BITMASK) != 0);
+    // wait until current vsync ends if in the middle of one
+    while ((inportb(VGA_STATUS_REG) & VSYNC_BITMASK) != 0);
+    // wait until next vsync starts
+    while ((inportb(VGA_STATUS_REG) & VSYNC_BITMASK) == 0);
 }
