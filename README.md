@@ -1,6 +1,6 @@
 <h1>
 <p align="center">
-    <img src="./logo.png" alt="Logo" width="128" />
+    <img src="./logo.png" alt="Logo" width="64" />
     <br>PopCorn Bucket
 </p>
 </h1>
