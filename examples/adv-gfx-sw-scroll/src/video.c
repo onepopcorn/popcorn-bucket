@@ -1,8 +1,10 @@
 #include <stdint.h>
 #include <dpmi.h>
 #include <pc.h>
+#include <go32.h>
 
 #include "video.h"
+#include "assets/palette.h"
 
 /**
  * Set video to given mode
@@ -14,6 +16,15 @@ void setVideoMode(uint8_t mode) {
     regs.h.ah = 0x00;
     regs.h.al = mode;
     __dpmi_int(0x10, &regs);
+}
+
+void setVideoPalette() {
+    outportb(0x3C8, 0);
+    for (int i = 0; i < 256; i++) {
+        outportb(0x3C9, palette[i].r);
+        outportb(0x3C9, palette[i].g);
+        outportb(0x3C9, palette[i].b);
+    }
 }
 
 /**
