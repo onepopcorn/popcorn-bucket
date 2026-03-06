@@ -1,0 +1,5 @@
+# Force C language detection
+*.c linguist-language=C
+*.h linguist-language=C
+
+tools/*.lua linguist-vendored
