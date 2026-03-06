@@ -2,4 +2,5 @@
 *.c linguist-language=C
 *.h linguist-language=C
 
-tools/*.lua linguist-vendored
+tools/** linguist-vendored
+*.mk linguist-vendored
