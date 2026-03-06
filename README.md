@@ -54,7 +54,7 @@ Before running any example you will need the following tools to be installed pro
 
 ## How to use
 
-All examples are isolated in subfolders inside `examples` folder. Each one has its own source code and README.md with information about the example. Each folder also contains its own `Makefile` but you don't need to call them directly. All examples can be built and run from the root folder.
+All examples are isolated in subfolders inside `src` folder. Each one has its own source code and README.md with information about the example. Each folder also contains its own `Makefile` but you don't need to call them directly. All examples can be built and run from the root folder.
 
 These are the basic commands:
 

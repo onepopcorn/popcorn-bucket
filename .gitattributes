@@ -1,7 +1,7 @@
 # Force C language detection
-examples/**.c linguist-language=C
-examples/**.h linguist-language=C
-examples/** linguist-vendored=false
+src/**.c linguist-language=C
+src/**.h linguist-language=C
+src/** linguist-vendored=false
 
 # Ignore other languages
 tools/** linguist-vendored

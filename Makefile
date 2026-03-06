@@ -1,6 +1,6 @@
 include config.mk
 
-EXAMPLES_DIR := ./examples
+EXAMPLES_DIR := ./src
 OUT_DIR := ./out
 
 # Examples list. Exe filenames must be DOS friendly (8 characters long max)
