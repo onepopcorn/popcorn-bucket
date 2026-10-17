@@ -1,0 +1,19 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+    },
+    "last.imagePath": "/Users/jordism/repos/popcorn-bucket/src/tiled-reader/static",
+    "openFiles": [
+    ],
+    "project": "maps.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 8,
+        "width": 8
+    },
+    "tileset.useTransparentColor": true
+}
