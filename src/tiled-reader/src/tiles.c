@@ -17,7 +17,6 @@ int tiles_values[MAX_VERT_TILES][MAX_HORIZ_TILES] = { 0 };
 int curr_tiles_width = 0;
 int map_width = 0;
 int map_pixel_width = 0;
-int almanac_tile_x = -1;
 
 // loads tiles.bmp (8bpp, 256px wide, bottom-up) into `tiles` and sets the VGA palette
 void load_tiles() {
@@ -154,9 +153,6 @@ int load_background(char * contents, long size, uint8_t* background) {
                 TILES_SIZE, TILES_SIZE);
             // store tile value
             tiles_values[tiles_y][tiles_x] = tile_number;
-            if (tile_number - 1 == 1040) { // ALMANAC_TILE_ID
-                almanac_tile_x = screen_coords.x;
-            }
 
             screen_coords.x += 8;
             tiles_x++;
