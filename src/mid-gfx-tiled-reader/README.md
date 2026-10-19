@@ -6,5 +6,5 @@ The goal of this example is to show how to load a big map and display in the scr
 
 <figure align="center">
     <img src="demo.png" />
-    <figcaption>Basic Mode 13h demo</figcapture>
+    <figcaption>Tiled Demo</figcapture>
 </figure>

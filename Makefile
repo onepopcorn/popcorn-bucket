@@ -10,7 +10,7 @@ MAP_basic-mouse := mouse.exe
 MAP_basic-mem-stats := memstat.exe
 MAP_adv-gfx-mode-x-hw-scroll := hw-scro.exe
 MAP_adv-gfx-sw-scroll := swscroll.exe
-MAP_tiled-reader := tiled.exe
+MAP_mid-gfx-tiled-reader := tiled.exe
 
 
 # Default target (just for help)
