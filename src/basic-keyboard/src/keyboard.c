@@ -14,7 +14,7 @@
 #define KEY_RELEASED_MASK 0x80  // 0b10000000
 #define KEYCODE_MASK 0x7f       // 0b01111111
 
-#define IRQ9 0x09
+#define IRQ1 0x09
 #define PIC_CMD_PORT 0x20
 #define KEYB_PORT 0x60
 
