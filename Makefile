@@ -9,6 +9,7 @@ MAP_basic-gfx-mode-13h := gfx-13h.exe
 MAP_basic-mouse := mouse.exe
 MAP_basic-keyboard := kbrd.exe
 MAP_basic-mem-stats := memstat.exe
+MAP_basic-snd-speaker := spk.exe
 MAP_adv-gfx-mode-x-hw-scroll := hw-scro.exe
 MAP_adv-gfx-sw-scroll := swscroll.exe
 MAP_mid-gfx-tiled-reader := tiled.exe
