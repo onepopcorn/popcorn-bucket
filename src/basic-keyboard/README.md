@@ -1,4 +1,4 @@
-# Mouse Control
+# Keyboard Control
 A very basic example to show how to control user input via keyboard.
 
 ## What you learn
