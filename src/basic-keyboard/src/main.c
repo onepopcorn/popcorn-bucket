@@ -5,10 +5,10 @@
 // https://kbdlayout.info/kbdusx/scancodes+virtualkeys
 #define KEY_ESC 0x01
 #define KEY_SPACE 0x39
-#define KEY_UP 0x48
-#define KEY_LEFT 0x4B
-#define KEY_RIGHT 0x4D
-#define KEY_DOWN 0x50
+#define KEY_UP (EXT_CODE_OFFSET + 0x48)
+#define KEY_LEFT (EXT_CODE_OFFSET + 0x4B)
+#define KEY_RIGHT (EXT_CODE_OFFSET + 0x4D)
+#define KEY_DOWN (EXT_CODE_OFFSET + 0x50)
 
 void msg(char* key, int state, int line) {
     gotoxy(1, line);
