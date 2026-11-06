@@ -2,6 +2,7 @@
 #include <pc.h>
 #include <stdint.h>
 #include "timer.h"
+#include "assets/sounds.h"
 
 volatile int beat_counter = 0;
 volatile int duration_counter = 0;
@@ -20,11 +21,15 @@ inline void spk_enable() {
     outportb(SPK_PORT, inportb(SPK_PORT) | 0x03);
 }
 
-void spk_play(int snd) {
-    active_sound = snd;
+static inline void reset() {
+    active_sound = -1;
+    beat_counter = 0;
+    duration_counter = 0;
 }
 
-void spk_stop() {
+void spk_play(int snd) {
+    reset();
+    active_sound = snd;
 }
 
 void spk_tone(int freq) {
@@ -40,9 +45,7 @@ void spk_update() {
     Sound sound = fx[active_sound];
     if (beat_counter >= sound.count) {
         spk_disable();
-        active_sound = -1;
-        beat_counter = 0;
-        duration_counter = 0;
+        reset();
         return;
     }
 
