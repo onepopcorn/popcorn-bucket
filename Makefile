@@ -61,9 +61,13 @@ clean_all:
 		$(MAKE) clean --no-print-directory -C $(EXAMPLES_DIR)/$$KEY FILENAME=$($v); \
 	)
 
-# Prevent make from thinking those are real targets
+# Stops make from trying to build the example names passed as goals.
+# A name is accepted only if it is listed in MAP_*.
 %:
-	@:
+	@if [ -z "$(MAP_$*)" ]; then \
+		echo "make: nothing to do for '$*' (available: run build clean clean_all list help)" >&2; \
+		exit 1; \
+	fi
 
 
 .PHONY: help run clean clean_all build
