@@ -8,8 +8,6 @@
 
 #define IRS_TIMER_0 0x08
 
-#define TIMER_DIVISOR (PIT_CLOCK_FREQ / 100)  // 100Hz
-
 static _go32_dpmi_seginfo old_handler_0, new_handler_0;
 
 VoidFunc callbacks[10] = {NULL};
@@ -23,7 +21,8 @@ static void timer_handler() {
     }
 }
 
-void timer_init() {
+void timer_init(int freq) {
+    int divisor = PIT_CLOCK_FREQ / freq;
     // Save old timer handlers
     _go32_dpmi_get_protected_mode_interrupt_vector(IRS_TIMER_0, &old_handler_0);
 
@@ -34,8 +33,8 @@ void timer_init() {
 
     // Configure timer to 100Hz
     outportb(PIT_CONF_REG, 0x34);  // 00110100 -> 00 counter select timer 0 | 11 16bit read/write low / high bytes | 010 Mode 2 (rate generator / repeating) | 0 non BCD format
-    outportb(PIT_TIMER0_DATA_PORT, (uint16_t)TIMER_DIVISOR & 0xFF);
-    outportb(PIT_TIMER0_DATA_PORT, ((uint16_t)TIMER_DIVISOR >> 8) & 0xFF);
+    outportb(PIT_TIMER0_DATA_PORT, (uint16_t)divisor & 0xFF);
+    outportb(PIT_TIMER0_DATA_PORT, ((uint16_t)divisor >> 8) & 0xFF);
 }
 
 void timer_free() {

@@ -9,7 +9,7 @@
 
 typedef void (*VoidFunc)(void);
 
-void timer_init();
+void timer_init(int freq);
 void timer_free();
 void timer_register_callback(VoidFunc);
 

@@ -13,7 +13,7 @@
 const char* fx_names[] = {"coin", "shoot", "explosion"};
 
 int main() {
-    timer_init();
+    timer_init(100);  // set timer0 to 100hz so our handler will be called every ~10ms
     keyb_init();
 
     clrscr();
