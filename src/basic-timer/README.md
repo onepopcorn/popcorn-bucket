@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/90a43b62-de27-4438-8f73-7f6495274b7f
-
 # Timers
 A simple example to show how to setup timer interrupts to have a stable tick counter
 
