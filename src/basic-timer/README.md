@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/90a43b62-de27-4438-8f73-7f6495274b7f
+
 # Timers
 A simple example to show how to setup timer interrupts to have a stable tick counter
 
@@ -31,3 +35,6 @@ interrupt rate = 1 / ~100 * 1000 = ~10ms
 We must keep in mind that increasing the frequency at which our interrupt is being triggered means that it will be triggered more often and hence taking more CPU time. So we must be careful of what we use these interrupts for and try always to do small operations such as setting flags or updating counters.
 
 ## Demo
+https://github.com/user-attachments/assets/a0ce9cbc-4b23-4b2d-90b9-29806cbadad3
+
+
