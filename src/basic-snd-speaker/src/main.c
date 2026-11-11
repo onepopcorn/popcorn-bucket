@@ -1,8 +1,8 @@
+#include "speaker.h"
 #include <stdio.h>
 #include <conio.h>
-#include "timer.h"
-#include "speaker.h"
 #include "keyboard.h"  // borrowing from basic-keyboard example
+#include "timer.h"     // borrowing from basic-timer
 
 #define KEY_ESC 0x01
 #define KEY_1 0x02
